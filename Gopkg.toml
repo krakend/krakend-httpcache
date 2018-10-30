@@ -1,0 +1,15 @@
+[[constraint]]
+  name = "github.com/devopsfaith/krakend"
+  version = "0.7.0"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/gregjones/httpcache"
+
+[[constraint]]
+  branch = "master"
+  name = "golang.org/x/sync"
+
+[prune]
+  go-tests = true
+  unused-packages = true
