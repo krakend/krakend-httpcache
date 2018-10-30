@@ -7,6 +7,7 @@ import (
 
 	"github.com/devopsfaith/krakend/config"
 	"github.com/devopsfaith/krakend/proxy"
+	"github.com/devopsfaith/krakend/transport/http/client"
 	"github.com/gregjones/httpcache"
 )
 
@@ -19,10 +20,10 @@ var (
 )
 
 // NewHTTPClient creates a HTTPClientFactory using an in-memory-cached http client
-func NewHTTPClient(cfg *config.Backend) proxy.HTTPClientFactory {
+func NewHTTPClient(cfg *config.Backend) client.HTTPClientFactory {
 	_, ok := cfg.ExtraConfig[Namespace]
 	if !ok {
-		return proxy.NewHTTPClient
+		return client.NewHTTPClient
 	}
 	return func(_ context.Context) *http.Client {
 		return &memClient
