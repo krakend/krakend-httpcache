@@ -12,9 +12,9 @@ import (
 	"sync/atomic"
 	"testing"
 
-	"github.com/devopsfaith/krakend/config"
-	"github.com/devopsfaith/krakend/encoding"
-	"github.com/devopsfaith/krakend/proxy"
+	"github.com/luraproject/lura/config"
+	"github.com/luraproject/lura/encoding"
+	"github.com/luraproject/lura/proxy"
 )
 
 func TestClient_ok(t *testing.T) {
