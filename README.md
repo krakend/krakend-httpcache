@@ -10,8 +10,8 @@ This package exposes two simple factories capable to create a instances of the `
 	import 	(
 		"context"
 		"net/http"
-		"github.com/luraproject/lura/config"
-		"github.com/luraproject/lura/proxy"
+		"github.com/luraproject/lura/v2/config"
+		"github.com/luraproject/lura/v2/proxy"
 		"github.com/devopsfaith/krakend-httpcache"
 	)
 
