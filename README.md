@@ -12,11 +12,12 @@ This package exposes two simple factories capable to create a instances of the `
 		"net/http"
 		"github.com/luraproject/lura/v2/config"
 		"github.com/luraproject/lura/v2/proxy"
-		"github.com/devopsfaith/krakend-httpcache"
+		"github.com/luraproject/lura/v2/transport/http/client"
+		"github.com/devopsfaith/krakend-httpcache/v2"
 	)
 
 	requestExecutorFactory := func(cfg *config.Backend) proxy.HTTPRequestExecutor {
-		clientFactory := httpcache.NewHTTPClient(cfg)
+		clientFactory := httpcache.NewHTTPClient(cfg, client.NewHTTPClient)
 		return func(ctx context.Context, req *http.Request) (*http.Response, error) {
 			return clientFactory(ctx).Do(req.WithContext(ctx))
 		}
