@@ -3,7 +3,7 @@ module github.com/devopsfaith/krakend-httpcache/v2
 go 1.17
 
 require (
-	github.com/luraproject/lura/v2 v2.0.0-dev
+	github.com/luraproject/lura/v2 v2.0.0
 	github.com/gregjones/httpcache v0.0.0-20190611155906-901d90724c79
 )
 
