@@ -1,4 +1,4 @@
-module github.com/devopsfaith/krakend-httpcache/v2
+module github.com/krakendio/krakend-httpcache/v2
 
 go 1.17
 
