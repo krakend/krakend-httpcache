@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/http/httptest"
 	"net/url"
@@ -12,7 +12,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/gregjones/httpcache"
+	"github.com/krakendio/httpcache"
 	"github.com/luraproject/lura/v2/config"
 	"github.com/luraproject/lura/v2/encoding"
 	"github.com/luraproject/lura/v2/proxy"
@@ -155,7 +155,7 @@ func TestClient_backendFactory(t *testing.T) {
 		req := &proxy.Request{
 			Method: "GET",
 			URL:    URL,
-			Body:   ioutil.NopCloser(bytes.NewBufferString("")),
+			Body:   io.NopCloser(bytes.NewBufferString("")),
 		}
 		resp, err := backendProxy(ctx, req)
 		if err != nil {
@@ -182,7 +182,7 @@ func testClient(t *testing.T, cfg *config.Backend, URL string) {
 			t.Error(err)
 			return
 		}
-		response, err := ioutil.ReadAll(resp.Body)
+		response, err := io.ReadAll(resp.Body)
 		resp.Body.Close()
 		if err != nil {
 			t.Error(err)
