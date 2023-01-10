@@ -4,5 +4,9 @@ github.com/krakendio/httpcache v0.0.0-20221129153752-65a87a5c2bc5 h1:gB5divkol6F
 github.com/krakendio/httpcache v0.0.0-20221129153752-65a87a5c2bc5/go.mod h1:VWTP3MZHr/W9OauBMrOQ2bD1rIjDetAQo5JbXCezYKE=
 github.com/luraproject/lura/v2 v2.0.5 h1:Mc4uj37s7mv6qRLy+Uo983CiaITPSVJYooeUilbiD+k=
 github.com/luraproject/lura/v2 v2.0.5/go.mod h1:r2N4j89Snm1j+Y9CCa9cYR1T2ETRL0E4y9P+DgymqX4=
+github.com/luraproject/lura/v2 v2.2.3 h1:zePcqPP7XXjDKmWht8hJbFoPVNtBgdV3I6F2PyTFaB8=
+github.com/luraproject/lura/v2 v2.2.3/go.mod h1:Outo/8O5zqa2itP1wD/mdD5nskjo09R74EbMVgr1L98=
 github.com/valyala/fastrand v1.1.0 h1:f+5HkLW4rsgzdNoleUOB69hyT9IlD2ZQh9GyDMfb5G8=
 github.com/valyala/fastrand v1.1.0/go.mod h1:HWqCzkrkg6QXT8V2EXWvXCoow7vLwOFN002oeRzjapQ=
+golang.org/x/text v0.5.0 h1:OLmvp0KP+FVG99Ct/qFiL/Fhk4zp4QQnZ7b2U+5piUM=
+golang.org/x/text v0.5.0/go.mod h1:mrYo+phRRbMaCq/xk9113O4dZlRixOauAjOtrjsXDZ8=
