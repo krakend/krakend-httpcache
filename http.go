@@ -84,8 +84,10 @@ func selectCache(opts options) Cache {
 	return globalLruCache
 }
 
-var globalLruCache Cache
-var globalCache = httpcache.NewMemoryCache()
+var (
+	globalLruCache Cache
+	globalCache    = httpcache.NewMemoryCache()
+)
 
 type options struct {
 	Shared   bool   `json:"shared"`
