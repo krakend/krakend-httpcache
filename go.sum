@@ -1,9 +1,9 @@
+github.com/krakend/lru v0.0.0-20250121172718-0e3a6eab620d h1:Kktd6hjWjY+TgL/oESBdTTVKJ7BFroS/YA2PZ1PsFLA=
+github.com/krakend/lru v0.0.0-20250121172718-0e3a6eab620d/go.mod h1:VgOve4vVYbY6UkD3qHdqmq2AKwqHlp39TKMi2b2cQBI=
 github.com/krakendio/flatmap v1.1.1 h1:rGBNVpBY0pMk6cLOwerVzoKY4HELnpu0xvqB231lOCQ=
 github.com/krakendio/flatmap v1.1.1/go.mod h1:KBuVkiH5BcBFRa5A1HdSHDn8a8LzsyRTKZArX0vqTbo=
 github.com/krakendio/httpcache v0.0.0-20221129153752-65a87a5c2bc5 h1:gB5divkol6FZK6OVGjh7odTsOY3FAESpeq9qyAVCZkc=
 github.com/krakendio/httpcache v0.0.0-20221129153752-65a87a5c2bc5/go.mod h1:VWTP3MZHr/W9OauBMrOQ2bD1rIjDetAQo5JbXCezYKE=
-github.com/luraproject/lura/v2 v2.0.5 h1:Mc4uj37s7mv6qRLy+Uo983CiaITPSVJYooeUilbiD+k=
-github.com/luraproject/lura/v2 v2.0.5/go.mod h1:r2N4j89Snm1j+Y9CCa9cYR1T2ETRL0E4y9P+DgymqX4=
 github.com/luraproject/lura/v2 v2.2.3 h1:zePcqPP7XXjDKmWht8hJbFoPVNtBgdV3I6F2PyTFaB8=
 github.com/luraproject/lura/v2 v2.2.3/go.mod h1:Outo/8O5zqa2itP1wD/mdD5nskjo09R74EbMVgr1L98=
 github.com/valyala/fastrand v1.1.0 h1:f+5HkLW4rsgzdNoleUOB69hyT9IlD2ZQh9GyDMfb5G8=
