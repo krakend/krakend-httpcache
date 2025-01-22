@@ -316,7 +316,7 @@ const statusOKMsg = `{"status": "ok"}`
 func newBackend(ttl int) backend {
 	var ops uint64
 	return backend{
-		server: httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		server: httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
 			atomic.AddUint64(&ops, 1)
 			w.Header().Set("Cache-Control", fmt.Sprintf("public, max-age=%d", ttl))
 			w.Header().Set("Content-Type", "application/json")
