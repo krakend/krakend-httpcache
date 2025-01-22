@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"net/http"
 
+	"github.com/krakend/lru"
 	"github.com/krakendio/httpcache"
 
 	"github.com/luraproject/lura/v2/config"
@@ -32,19 +33,24 @@ func NewHTTPClient(cfg *config.Backend, nextF client.HTTPClientFactory) client.H
 		return nextF
 	}
 
-	var cache Cache
-
-	if b, err := json.Marshal(raw); err == nil {
-		var opts options
-		if err := json.Unmarshal(b, &opts); err == nil && opts.Shared {
-			cache = globalCache
-		}
+	b, err := json.Marshal(raw)
+	if err != nil {
+		return defaultClient(nextF)
 	}
 
-	if cache == nil {
-		cache = httpcache.NewMemoryCache()
+	var opts options
+	if err := json.Unmarshal(b, &opts); err != nil {
+		return defaultClient(nextF)
 	}
 
+	return getCachedClient(nextF, selectCache(opts))
+}
+
+func defaultClient(nextF client.HTTPClientFactory) client.HTTPClientFactory {
+	return getCachedClient(nextF, httpcache.NewMemoryCache())
+}
+
+func getCachedClient(nextF client.HTTPClientFactory, cache Cache) client.HTTPClientFactory {
 	return func(ctx context.Context) *http.Client {
 		httpClient := nextF(ctx)
 		return &http.Client{
@@ -59,8 +65,30 @@ func NewHTTPClient(cfg *config.Backend, nextF client.HTTPClientFactory) client.H
 	}
 }
 
+func selectCache(opts options) Cache {
+	if opts.MaxSize == 0 || opts.MaxItems == 0 {
+		if opts.Shared {
+			return globalCache
+		}
+		return httpcache.NewMemoryCache()
+	}
+
+	if !opts.Shared {
+		cache, _ := lru.NewLruCache(opts.MaxSize, opts.MaxItems)
+		return cache
+	}
+
+	if globalLruCache == nil {
+		globalLruCache, _ = lru.NewLruCache(opts.MaxSize, opts.MaxItems)
+	}
+	return globalLruCache
+}
+
+var globalLruCache Cache
 var globalCache = httpcache.NewMemoryCache()
 
 type options struct {
-	Shared bool `json:"shared"`
+	Shared   bool   `json:"shared"`
+	MaxSize  uint64 `json:"max_size"`
+	MaxItems uint64 `json:"max_items"`
 }
