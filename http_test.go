@@ -12,7 +12,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/krakendio/httpcache"
+	"github.com/krakend/httpcache"
 	"github.com/luraproject/lura/v2/config"
 	"github.com/luraproject/lura/v2/encoding"
 	"github.com/luraproject/lura/v2/proxy"
