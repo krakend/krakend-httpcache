@@ -6,8 +6,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/krakend/lru"
 	"github.com/krakend/httpcache"
+	"github.com/krakend/lru"
 
 	"github.com/luraproject/lura/v2/config"
 	"github.com/luraproject/lura/v2/transport/http/client"
