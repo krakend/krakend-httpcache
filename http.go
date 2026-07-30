@@ -9,8 +9,8 @@ import (
 	"github.com/krakend/httpcache"
 	"github.com/krakend/lru"
 
-	"github.com/luraproject/lura/v2/config"
-	"github.com/luraproject/lura/v2/transport/http/client"
+	"github.com/luraproject/lura/v3/config"
+	"github.com/luraproject/lura/v3/transport/http/client"
 )
 
 type Cache interface {
@@ -24,7 +24,7 @@ type Cache interface {
 }
 
 // Namespace is the key to use to store and access the custom config data
-const Namespace = "github.com/devopsfaith/krakend-httpcache"
+const Namespace = "qos/http-cache"
 
 // NewHTTPClient creates a HTTPClientFactory using an in-memory-cached http client
 func NewHTTPClient(cfg *config.Backend, nextF client.HTTPClientFactory) client.HTTPClientFactory {
