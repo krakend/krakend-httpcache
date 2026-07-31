@@ -1,7 +1,7 @@
 Krakend HTTP Cache
 ====
 
-A cached http client for the [KrakenD](github.com/devopsfaith/krakend) framework
+A cached http client for the [KrakenD](https://krakend.io) framework
 
 ## Using it
 
@@ -10,10 +10,10 @@ This package exposes two simple factories capable to create a instances of the `
 	import 	(
 		"context"
 		"net/http"
-		"github.com/luraproject/lura/v2/config"
-		"github.com/luraproject/lura/v2/proxy"
-		"github.com/luraproject/lura/v2/transport/http/client"
-		"github.com/krakend/krakend-httpcache/v2"
+		"github.com/luraproject/lura/v3/config"
+		"github.com/luraproject/lura/v3/proxy"
+		"github.com/luraproject/lura/v3/transport/http/client"
+		"github.com/krakend/krakend-httpcache/v3"
 	)
 
 	requestExecutorFactory := func(cfg *config.Backend) proxy.HTTPRequestExecutor {
